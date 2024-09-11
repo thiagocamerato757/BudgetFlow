@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} <!-- Carregar a tag static do Django -->
+    <link rel="stylesheet" href="{% static 'Login/css/cadastro.css' %}">
+    <title>cadastro_usuario</title>
+</head>
+<body class="body">
+    <div class="container">
+        <div class="logo">
+            <img src="{% static 'Login/img/sabo.jpg' %}" alt="Logo da pagina"> 
+        </div>
+        <h3>Por favor, registre suas informações!</h3>
+        <form action="{% url 'cadastro_usuario' %}" method="POST" class="nome-login">
+            {% csrf_token %} <!-- Adicione o token CSRF para segurança -->
+            <p>Nome de usuário</p>
+            <input type="text" name="nome_de_usuario" placeholder="Nome de usuário..." required>
+            <p>Senha</p>
+            <input type="password" name="senha" placeholder="Senha..." required>
+            <button class="confirma" type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
