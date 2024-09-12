@@ -1,5 +1,5 @@
 .body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Arial, sans-serif;
     background-size: cover;
     background-color: #312f2f; 
     color: #39FF14;
@@ -31,7 +31,7 @@
     border-radius: 50%;
 }
 
-h3 {
+h2 {
     margin-bottom: 20px;
 }
 

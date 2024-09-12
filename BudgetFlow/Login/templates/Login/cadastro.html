@@ -12,12 +12,12 @@
         <div class="logo">
             <img src="{% static 'Login/img/sabo.jpg' %}" alt="Logo da pagina"> 
         </div>
-        <h3>Por favor, registre suas informações!</h3>
+        <h2>Por favor, registre suas informações!</h2>
         <form action="{% url 'cadastro_usuario' %}" method="POST" class="nome-login">
             {% csrf_token %} <!-- Adicione o token CSRF para segurança -->
-            <p>Nome de usuário</p>
+            <h3>Nome de usuário</h3>
             <input type="text" name="nome_de_usuario" placeholder="Nome de usuário..." required>
-            <p>Senha</p>
+            <h3>Senha</h3>
             <input type="password" name="senha" placeholder="Senha..." required>
             <button class="confirma" type="submit">Registrar</button>
         </form>
