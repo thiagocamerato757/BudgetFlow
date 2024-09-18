@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    {% load static %} <!-- Carregar a tag static do Django -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %} <!-- Carregar a tag static do Django -->
     <link rel="stylesheet" href="{% static 'Login/css/cadastro.css' %}">
     <title>cadastro_usuario</title>
 </head>
 <body class="body">
     <div class="container">
         <div class="logo">
-            <img src="{% static 'Login/img/sabo.jpg' %}" alt="Logo da pagina"> 
+            <img src="{% static 'Login/img/Budget_Flow.png' %}" alt="Logo da pagina"> 
         </div>
-        <h2>Por favor, registre suas informações!</h2>
+        <h3>Por favor, registre suas informações!</h3>
         <form action="{% url 'cadastro_usuario' %}" method="POST" class="nome-login">
             {% csrf_token %} <!-- Adicione o token CSRF para segurança -->
             <h3>E-mail</h3> <!-- Alterado de "Nome de usuário" para "E-mail" -->

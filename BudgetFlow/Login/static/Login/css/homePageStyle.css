@@ -6,16 +6,21 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #39FF14; /* Verde neon para o texto geral */
+    background-color: #0E0E0E;
+    color: #36FF6E; /* Verde neon para o texto geral */
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;  
 }
 
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #FFFFFF;
+}
 nav {
-    background-color: #1F1F1F;
     padding: 15px;
     width: 100%;
     display: flex;
@@ -24,68 +29,49 @@ nav {
 }
 
 nav a {
-    color: #39FF14; /* Verde neon para os links */
+    color: #ffffff; 
     text-decoration: none;
-    margin-right: 15px;
+    margin-left: 30px;
     font-weight: bold;
 }
 
 nav a:hover {
-    text-decoration: underline;
-    color: #00FF7F; /* Verde neon mais claro ao passar o mouse */
-}
-
-#user-name-header {
-    color: #39FF14; /* Verde neon para o nome do usuário */
+    color: #36FF6E; /* Verde neon mais claro ao passar o mouse */
 }
 
 h1 {
-    color: #39FF14; /* Verde neon para o título */
+    color: #ffffff; /* Verde neon para o título */
     margin-bottom: 20px;
     text-align: center; /* Centraliza o título */
+    margin-top: 50px;
 }
 
-.container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 30px auto;
-    background-color: #1C1C1C;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+mark{
+    color: #36FF6E;
+    background-color: transparent;
 }
 
-.summary {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
+button{
+    background-color: #36FF6E;
+    border-radius: 7px;
+    width: 200px;
+    height: 80px;
+    border: none;
+    font-size: larger;
+    margin-top: 20px;
+    cursor:pointer;
 }
 
-.summary div {
-    background-color: #2C2C2C;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 30%;
+.ghost{
+    margin-top: 10%;
 }
 
-.summary h2 {
-    color: #39FF14; /* Verde neon para os títulos das caixas */
-    font-size: 20px;
-}
-
-.summary p {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFFFFF; /* Branco para os valores numéricos */
-    margin-top: 10px;
-}
 
 footer {
     text-align: center;
     padding: 10px;
     background-color: #1F1F1F;
-    color: #39FF14; /* Verde neon para o rodapé */
+    color: #36FF6E; /* Verde neon para o rodapé */
     margin-top: 30px;
     position: fixed;
     bottom: 0;
