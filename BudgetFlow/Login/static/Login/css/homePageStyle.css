@@ -62,6 +62,12 @@ button{
     cursor:pointer;
 }
 
+button:hover{
+    background-color:  #ffffff;
+    color:  #ffffff;
+    
+}
+
 .ghost{
     margin-top: 10%;
 }
