@@ -77,3 +77,27 @@ a {
     background-color: #ff6b6b;
     color: white;
 }
+
+/* Estilo para a mensagem de erro */
+.error-message {
+    background-color: #ff6b6b;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lista_erros {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.linha_erro {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #000000;
+}
+
