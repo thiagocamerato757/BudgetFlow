@@ -11,14 +11,6 @@ def cadastro_usuario(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            # Criptografar a senha usando bcrypt
-            password = form.cleaned_data['password']
-            hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-            
-            # Atualizar o campo de senha do formulário com a senha criptografada
-            form.cleaned_data['password'] = hashed_password
-            
-            # Salvar o usuário com a senha criptografada
             form.save()
             return redirect('/login')  # Redirecionar para a página de login
     else:
