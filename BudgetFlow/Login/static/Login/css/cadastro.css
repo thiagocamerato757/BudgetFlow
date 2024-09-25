@@ -108,6 +108,24 @@ p {
     color: #000000;
 }
 
+.error {
+    background-color: #ff6b6b;
+    color: #000000;
+    padding: 15px; /* Mantenha o padding igual */
+    margin: 20px 0; /* Margem para separar a mensagem */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Largura total do contêiner */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+    font-size: 14px; /* Tamanho da fonte para consistência */
+}
+
+.error div {
+    margin: 0; /* Remove qualquer margem do div */
+    list-style: none; /* Garante que não haja lista */
+    display: inline; /* Muda para inline para evitar quebra de linha */
+}
+
 /* Centralizar o link e garantir que a cor do texto seja branca */
 .opcoes-adicionais {
     text-align: center; /* Centraliza o conteúdo do contêiner */

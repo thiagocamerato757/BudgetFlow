@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from .forms import UserRegisterForm
-import bcrypt
+from .forms import UserLoginForm
 
 def homepage(request):
     return render(request, 'Login/homepage.html')
@@ -20,4 +20,11 @@ def cadastro_usuario(request):
 
 
 def login_usuario(request):
-    return render(request, 'Login/login.html')
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            return redirect('/')  # Redireciona para a homepage após o login
+    else:
+        form = UserLoginForm()
+
+    return render(request, 'Login/login.html', {'form': form})

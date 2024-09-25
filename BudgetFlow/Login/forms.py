@@ -29,3 +29,32 @@ class UserRegisterForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+class UserLoginForm(forms.Form):
+    user_email = forms.EmailField(
+        max_length=100,
+        label="E-mail",
+        widget=forms.EmailInput()
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(),
+        label="Senha"
+    )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        user_email = cleaned_data.get('user_email')
+        password = cleaned_data.get('password')
+
+        # Tentar buscar o usuário pelo e-mail
+        try:
+            user = User.objects.get(user_email=user_email)
+        except User.DoesNotExist:
+            # Adicionar erro geral ao formulário
+            raise forms.ValidationError("E-mail ou senha inválidos.")
+
+        # Verificar se a senha está correta
+        if not user.check_password(password):
+            raise forms.ValidationError("E-mail ou senha inválidos.")
+
+        return cleaned_data
