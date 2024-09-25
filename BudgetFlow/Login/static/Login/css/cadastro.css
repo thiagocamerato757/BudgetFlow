@@ -25,6 +25,18 @@
     overflow-y: auto; 
 }
 
+button.confirma {
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .foto img {
     width: 100px;
     margin-top: 20px;
@@ -56,11 +68,6 @@ p {
     align-self: flex-start;
 }
 
-a {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
 
 .flashes {
     list-style-type: none;
@@ -101,3 +108,44 @@ a {
     color: #000000;
 }
 
+/* Centralizar o link e garantir que a cor do texto seja branca */
+.opcoes-adicionais {
+    text-align: center; /* Centraliza o conteúdo do contêiner */
+    margin-top: 20px; /* Espaço superior para separação */
+}
+
+/* Centralizar o link */
+.links {
+    text-align: center;
+    margin-top: 20px; /* Espaçamento entre o botão e o link */
+}
+
+/* Estilo para o link "Ja sou registrado" */
+.links a {
+    color: white; /* Deixa o link branco */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Estilo ao passar o mouse */
+.links a:hover {
+    color: white; /* Mantém a cor branca ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

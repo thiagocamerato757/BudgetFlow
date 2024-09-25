@@ -20,4 +20,4 @@ def cadastro_usuario(request):
 
 
 def login_usuario(request):
-    return HttpResponse("teste")
+    return render(request, 'Login/login.html')
