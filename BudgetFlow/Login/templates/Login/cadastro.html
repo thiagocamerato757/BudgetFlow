@@ -26,8 +26,12 @@
         {% endif %}
 
         <h3>Por favor, registre suas informações!</h3>
-        <form action="{% url 'cadastro_usuario' %}" method="POST" class="nome-login">
+        <form action="{% url 'cadastro' %}" method="POST" class="nome-login">
             {% csrf_token %} <!-- Adiciona o token CSRF para segurança -->
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Nome Usuário:</label>
+                {{ form.username }} <!-- Exibe o campo de username -->
+            </div>
             <div class="form-group">
                 <label for="{{ form.user_email.id_for_label }}">Email:</label>
                 {{ form.user_email }} <!-- Exibe o campo de e-mail -->
@@ -38,7 +42,7 @@
             </div>
             <button class="confirma" type="submit">Registrar</button>
             <div class="links">
-                <a href="{% url 'login_usuario' %}">Já sou registrado</a>
+                <a href="{% url 'login' %}">Já sou registrado</a>
             </div>
         </form>
     </div>

@@ -15,8 +15,12 @@
                 <a href="#">Despesas</a>
                 <a href="#">Receitas</a>
                 <a href="#">Relatórios</a>
-                <a href="{% url 'login_usuario' %}">Login</a>
-                <a href="{% url 'cadastro_usuario' %}">Cadastre-se</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Sair</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'cadastro' %}">Cadastre-se</a>
+                {% endif %}
             </nav>
         </div>
     </header>

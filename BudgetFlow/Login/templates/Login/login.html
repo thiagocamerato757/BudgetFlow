@@ -12,30 +12,43 @@
         <div class="logo">
             <img src="{% static 'Login/img/Budget_Flow.png' %}" alt="Logo da pagina"> 
         </div>
-
         {% if form.non_field_errors %}
         <div class="error">
             {% for error in form.non_field_errors %}
                 <div>{{ error }}</div>
             {% endfor %}
         </div>
-        {% endif %}
-
+    {% endif %}
 
         <h3>Por favor, entre em sua conta!</h3>
-        <form action="{% url 'login_usuario' %}" method="POST" class="nome-login">
+        <form action="{% url 'login' %}" method="POST" class="nome-login">
             {% csrf_token %} <!-- Adicione o token CSRF para segurança -->
             <div class="form-group">
-                <label for="{{ form.user_email.id_for_label }}">Email:</label>
-                {{ form.user_email }} <!-- Exibe o campo de e-mail -->
+                <label for="{{ form.username.id_for_label }}">Nome Usuário:</label>
+                {{ form.username }} <!-- Exibe o campo de username -->
+                {% if form.username.errors %}
+        <div class="error">
+            {% for error in form.username.errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
             </div>
             <div class="form-group">
                 <label for="{{ form.password.id_for_label }}">Senha:</label>
                 {{ form.password }} <!-- Exibe o campo de senha -->
+                {% if form.password.errors %}
+        <div class="error">
+            {% for error in form.password.errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
             </div>
-            <button class="confirma" type="submit">Registrar</button>
+            <button class="confirma" type="submit">Logar</button>
             <div class="links">
-                <a href="{% url 'cadastro_usuario' %}">Já sou registrado</a>
+                <a href="{% url 'cadastro' %}">Não sou registrado</a>
             </div>
     </div>
 </body>
