@@ -23,15 +23,12 @@ def cadastro_usuario(request):
 def login_usuario(request):
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
-        print("Form enviado!")
         if form.is_valid():
-            print("Form validado!")
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
 
             # Verificando se a autenticação está funcionando
             user = authenticate(request, username=username, password=password)
-            print(f"Usuário autenticado: {user}")
 
             if user is not None:
                 login(request, user)

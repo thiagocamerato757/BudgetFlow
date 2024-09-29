@@ -12,13 +12,13 @@
         <div class="logo">
             <img src="{% static 'Login/img/Budget_Flow.png' %}" alt="Logo da pagina"> 
         </div>
-        {% if form.non_field_errors %}
-        <div class="error">
+            {% if form.non_field_errors %}
+                <div class="error">
             {% for error in form.non_field_errors %}
                 <div>{{ error }}</div>
             {% endfor %}
         </div>
-    {% endif %}
+            {% endif %}
 
         <h3>Por favor, entre em sua conta!</h3>
         <form action="{% url 'login' %}" method="POST" class="nome-login">
