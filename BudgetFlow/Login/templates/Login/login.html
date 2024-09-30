@@ -10,8 +10,11 @@
 <body class="body">
     <div class="container">
         <div class="logo">
-            <img src="{% static 'Login/img/Budget_Flow.png' %}" alt="Logo da pagina"> 
+            <a href="{% url 'homepage' %}">
+                <img src="{% static 'Login/img/Budget_Flow.png' %}" alt="Logo da página">
+            </a>
         </div>
+
             {% if form.non_field_errors %}
                 <div class="error">
             {% for error in form.non_field_errors %}
