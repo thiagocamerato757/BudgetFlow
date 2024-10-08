@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Despesa</title>
+</head>
+<body>
+    <h1>Registrar Despesa</h1>
+    <form method="POST" action="{% url 'add_despesa' %}">
+        {% csrf_token %}
+        {{ despesa_form.as_p }}
+        <button type="submit">Adicionar Despesa</button>
+    </form>
+</body>
+</html>

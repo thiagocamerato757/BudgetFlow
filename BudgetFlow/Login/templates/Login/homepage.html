@@ -31,7 +31,9 @@
         <h1>Bem-vindo ao Budget <mark>Flow</mark> {%firstof user.username "visitante"%} !</h1>
     </div>
         <h1>Controle seus <mark>gastos</mark> com mais facilidade</h1>
-        <button>Cadastre suas despesas</button>
+        <a href="{% url 'add_despesa' %}">
+            <button>Cadastre suas despesas</button>
+        </a>        
         <button>Cadastre suas <br>receitas</br></button>    
         <!-- Rodapé -->
     <footer>
