@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Despesa</title>
+    <title>Registrar Receita</title>
 </head>
 <body>
-    <h1>Registrar Despesa</h1>
-    <form method="POST" action="{% url 'add_despesa' %}">
+    <h1>Registrar Receita</h1>
+    <form method="POST" action="{% url 'add_receita' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Adicionar Despesa</button>
+        <button type="submit">Adicionar Receita</button>
     </form>
 </body>
 </html>
