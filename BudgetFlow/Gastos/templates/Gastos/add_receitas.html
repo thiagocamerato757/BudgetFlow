@@ -13,14 +13,9 @@
         <div>
             <nav>
                 <a href="/">Tela Inicial</a>
-                <a href="{% url 'add_despesa' %}">Regsitrar Despesa</a>
+                <a href="#">Visualizar Despesa</a>
                 <a href="#">Relatórios</a>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}">Sair</a>
-                {% else %}
-                    <a href="{% url 'login' %}">Login</a>
-                    <a href="{% url 'cadastro' %}">Cadastre-se</a>
-                {% endif %}
+                <a href="{% url 'logout' %}">Sair</a>
             </nav>
         </div>
     </header>
