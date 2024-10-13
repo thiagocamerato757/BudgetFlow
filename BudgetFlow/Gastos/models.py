@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import ValidationError
 
 class Despesa(models.Model):
     CATEGORIAS_DESPESAS = [
@@ -16,12 +17,15 @@ class Despesa(models.Model):
     
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     descricao = models.CharField(max_length=255)
-    valor = models.DecimalField(max_digits = 10, decimal_places=2)
+    valor = models.FloatField(default=0)
     data = models.DateField()
     categoria = models.CharField(max_length=20, choices=CATEGORIAS_DESPESAS,default='Outros')                                                                                                                                                                                                                                                                                                                                                                       
 
     def __str__(self):
         return f'{self.descricao} - {self.valor} ({self.categoria})'
+    def clean(self):
+        if self.valor < 0:
+            raise ValidationError('O valor não pode ser negativo.')
 
 class Receita(models.Model):
     CATEGORIAS_RECEITAS = [
@@ -36,9 +40,13 @@ class Receita(models.Model):
     
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     descricao = models.CharField(max_length=255)
-    valor = models.DecimalField(max_digits=10, decimal_places=2)
+    valor = models.FloatField(default=0)
     data = models.DateField()
     categoria = models.CharField(max_length=20, choices=CATEGORIAS_RECEITAS,default='Outros')
 
     def __str__(self):
         return f'{self.descricao} - {self.valor} ({self.categoria})'
+    
+    def clean(self):
+        if self.valor < 0:
+            raise ValidationError('O valor não pode ser negativo.')

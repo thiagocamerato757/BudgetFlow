@@ -37,7 +37,7 @@
         </div>
         {% endif %}
         <h1>Registrar Receita</h1>
-        <form method="POST" action="{% url 'add_despesa' %}">
+        <form method="POST" action="{% url 'add_receita' %}">
         {% csrf_token %}
             <div class="form-group">
                 <label for="{{ form.decricao.id_for_label }}">Descrição:</label>
