@@ -12,8 +12,8 @@
         <img src="{% static 'Login/img/Budget_Flow.png' %}" alt="Logo da pagina"> 
         <div>
             <nav>
-                <a href="#">Despesas</a>
-                <a href="#">Receitas</a>
+                <a href="{% url 'add_despesa' %}">Registrar Despesa</a>
+                <a href="{% url 'add_receita' %}">Registrar Receita</a>
                 <a href="#">Relatórios</a>
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout' %}">Sair</a>
