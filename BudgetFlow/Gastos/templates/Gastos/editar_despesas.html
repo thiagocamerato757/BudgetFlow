@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    {% load static %} <!-- Carregar a tag static do Django -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/add.css' %}">
     <title>Editar Despesa</title>
 </head>
 <body>
-    <h1>Editar Despesa</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Salvar</button>
-    </form>
-
-    <a href="{% url 'listar_despesas' %}">Voltar à lista de despesas</a>
+    <header>
+        <img src="{% static 'Login/img/Budget_Flow.png' %}" alt="Logo da pagina"> 
+        <div>
+            <nav>
+                <a href="/">Tela Inicial</a>
+                <a href="{% url 'listar_despesas' %}">Visualizar Despesa</a>
+                <a href="{% url 'listar_receitas' %}">Visualizar Receita</a>
+                <a href="#">Relatórios</a>
+                <a href="{% url 'logout' %}">Sair</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class = "container">
+        <h1>Editar Despesa</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.decricao.id_for_label }}">Descrição:</label>
+                {{ form.descricao }} <!-- Exibe o campo de valor -->
+            </div>
+            <div class="form-group">
+                <label for="{{ form.valor.id_for_label }}">Valor:</label>
+                {{ form.valor }} <!-- Exibe o campo de valor -->
+            </div>
+            <div class="form-group">
+                <label for="{{ form.data.id_for_label }}">Data:</label>
+                {{ form.data }} <!-- Exibe o campo de valor -->
+            </div>
+            <div class="form-group">
+                <label for="{{ form.categoria.id_for_label }}">Categoria:</label>
+                {{ form.categoria }} <!-- Exibe o campo de valor -->
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+        <a href="{% url 'listar_despesas' %}"><button>Voltar à lista de despesas</button></a>
+    </div>
 </body>
 </html>

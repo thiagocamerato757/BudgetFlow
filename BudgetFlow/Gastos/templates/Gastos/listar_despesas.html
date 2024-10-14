@@ -1,9 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet"  href ="{% static '/css/listagem.css' %}">
     <title>Lista de Despesas</title>
 </head>
 <body>
+    <header>
+        <img src="{% static 'Login/img/Budget_Flow.png' %}" alt="Logo da pagina"> 
+        <div>
+            <nav>
+                <a href= "/">Tela Inicial</a>
+                <a href= "{% url 'listar_despesas' %}"> Visualizar Despesas</a>
+                <a href= "{% url 'listar_receitas' %}">Visualizar Receitas</a>
+                <a href="#">Relatórios</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Sair</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'cadastro' %}">Cadastre-se</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
     <h1>Despesas</h1>
     <table>
         <tr>
@@ -14,16 +35,20 @@
             <th>Ações</th>
         </tr>
         {% for despesa in despesas %}
-        <tr>
-            <td>{{ despesa.descricao }}</td>
-            <td>{{ despesa.valor }}</td>
-            <td>{{ despesa.data }}</td>
-            <td>{{ despesa.get_categoria_display }}</td>
-            <td>
-                <a href="{% url 'editar_despesa' despesa.id %}">Editar</a>
-                <a href="{% url 'remover_despesa' despesa.id %}" onclick="return confirm('Tem certeza que deseja remover?');">Remover</a>
-            </td>
-        </tr>
+        <div class = "informacoes">
+            <tr>
+                <div class = "descricao">
+                    <td>{{ despesa.descricao }}</td>
+                </div>
+                    <td>{{ despesa.valor }}</td>
+                <td>{{ despesa.data }}</td>
+                <td>{{ despesa.get_categoria_display }}</td>
+                <td>
+                    <a href="{% url 'editar_despesa' despesa.id %}"><button>Editar</button></a>
+                    <a href="{% url 'remover_despesa' despesa.id %}" onclick="return confirm('Tem certeza que deseja remover?');"><button>Remover</button></a>
+                </td>
+            </tr>
+        </div>
         {% endfor %}
     </table>  
 </body>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Receita</title>
-    <link rel="stylesheet" href="{% static '/css/despesas.css' %}">
+    <link rel="stylesheet" href="{% static '/css/add.css' %}">
 </head>
 <body>
 <header>
@@ -13,7 +13,8 @@
         <div>
             <nav>
                 <a href="/">Tela Inicial</a>
-                <a href="#">Visualizar Despesa</a>
+                <a href="{% url 'listar_despesas' %}">Visualizar Despesa</a>
+                <a href="{% url 'listar_receitas' %}">Visualizar Receita</a>
                 <a href="#">Relatórios</a>
                 <a href="{% url 'logout' %}">Sair</a>
             </nav>

@@ -74,6 +74,7 @@ button{
     width: 100%;
     box-sizing: border-box;
     font-size: large;
+    margin-bottom: 10px;
 }
 
 /* Estilo para a mensagem de erro */
