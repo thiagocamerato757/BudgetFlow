@@ -57,7 +57,7 @@ O site BudgetFlow oferece funcionalidades básicas para controle de finanças pe
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/budgetflow.git
+    git clone https://github.com/thiagocamerato757/BudgetFlow.git
     ```
 2. Instale as dependências:
     ```bash
