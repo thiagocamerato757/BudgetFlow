@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Receitas</title>
+</head>
+<body>
+    <h1>Receitas</h1>
+    <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+        </tr>
+        {% for receita in receitas %}
+        <tr>
+            <td>{{ receita.descricao }}</td>
+            <td>{{ receita.valor }}</td>
+            <td>{{ receita.data }}</td>
+            <td>{{ receita.get_categoria_display }}</td>
+            <td>
+                <a href="{% url 'editar_receita' receita.id %}">Editar</a>
+                <a href="{% url 'remover_receita' receita.id %}" onclick="return confirm('Tem certeza que deseja remover?');">Remover</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

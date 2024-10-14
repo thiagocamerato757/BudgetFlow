@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Despesas</title>
+</head>
+<body>
+    <h1>Despesas</h1>
+    <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+        </tr>
+        {% for despesa in despesas %}
+        <tr>
+            <td>{{ despesa.descricao }}</td>
+            <td>{{ despesa.valor }}</td>
+            <td>{{ despesa.data }}</td>
+            <td>{{ despesa.get_categoria_display }}</td>
+            <td>
+                <a href="{% url 'editar_despesa' despesa.id %}">Editar</a>
+                <a href="{% url 'remover_despesa' despesa.id %}" onclick="return confirm('Tem certeza que deseja remover?');">Remover</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>  
+</body>
+</html>
