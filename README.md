@@ -14,14 +14,14 @@ O site BudgetFlow oferece funcionalidades básicas para controle de finanças pe
 
 ### Cadastro de Usuário
 
-1. Na página inicial, clique em **Criar Conta**.
+1. Na página inicial, clique em **Cadastre-se**.
 2. Preencha o formulário de registro com seu nome de usuário, e-mail e senha.
 3. Após o envio do formulário, você será redirecionado para a página de login.
 4. Faça login com as credenciais recém-criadas.
 
 ### Login e Logout
 
-- **Login**: Após o registro, ou se já tiver uma conta, clique em **Entrar** na página inicial, insira suas credenciais e faça login.
+- **Login**: Após o registro, ou se já tiver uma conta, clique em **Login** na página inicial, insira suas credenciais e faça login.
 - **Logout**: Quando estiver autenticado, na página inicial será exibida a opção **Sair**. Clique nela para sair da sua conta.
 
 ### Adicionar Receitas/Despesas
