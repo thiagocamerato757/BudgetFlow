@@ -1,0 +1,6 @@
+services:
+  web:
+    build: .
+    container_name: BudgetFlow
+    ports:
+      - "8000:8000"

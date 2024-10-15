@@ -15,7 +15,6 @@
                 <a href= "/">Tela Inicial</a>
                 <a href= "{% url 'listar_despesas' %}"> Visualizar Despesas</a>
                 <a href= "{% url 'listar_receitas' %}">Visualizar Receitas</a>
-                <a href="#">Relatórios</a>
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout' %}">Sair</a>
                 {% else %}

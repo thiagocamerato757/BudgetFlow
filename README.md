@@ -53,7 +53,7 @@ O site BudgetFlow oferece funcionalidades básicas para controle de finanças pe
 
 - **Nenhuma falha foi identificada até o momento**.
 
-## Como Executar o Projeto
+## Como Executar o Projeto Localmente
 
 1. Clone o repositório:
     ```bash
@@ -76,14 +76,60 @@ O site BudgetFlow oferece funcionalidades básicas para controle de finanças pe
     http://127.0.0.1:8000
     ```
 
+## Como Usar a Imagem Docker
+
+Para rodar o BudgetFlow usando Docker, siga os passos abaixo:
+
+1. Certifique-se de que o Docker está instalado na sua máquina. Se ainda não estiver, você pode seguir as instruções de instalação no site oficial: [Instalar Docker](https://docs.docker.com/get-docker/).
+
+2. Baixe e execute a imagem Docker do BudgetFlow diretamente do Docker Hub usando o seguinte comando:
+
+    ```bash
+    sudo docker pull thiagocamerato/budgetflow
+    ```
+
+    ```bash
+    sudo docker run -d -p 8000:8000 thiagocamerato/budgetflow:1.0
+    ```
+
+    Esse comando:
+    - Baixa a imagem `thiagocamerato/budgetflow:1.0` do Docker Hub.
+    - Roda o container em segundo plano (`-d`).
+    - Mapeia a porta 8000 do container para a porta 8000 da sua máquina, tornando o site acessível em `http://localhost:8000`.
+
+3. Acesse o site no navegador utilizando o seguinte endereço:
+
+    ```bash
+    http://localhost:8000
+    ```
+
+4. Para parar o container:
+
+    Liste os containers em execução com o comando:
+
+    ```bash
+    sudo docker ps
+    ```
+
+    Então, pare o container usando o ID correspondente:
+
+    ```bash
+    sudo docker stop <container_id>
+    ```
+
+## Link da Imagem no Docker Hub
+
+Você pode encontrar a imagem do BudgetFlow no Docker Hub no seguinte link:
+
+[thiagocamerato/budgetflow:1.0 no Docker Hub](https://hub.docker.com/r/thiagocamerato/budgetflow)
+
 ## Componentes do Grupo
 
 - **Thiago Pereira Camerato**
 - **Marcos Turo Fernandes Junior**
 
-
 ## Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues.
 
-[Ver Projeto no GitHub](https://github.com/seu-usuario/budgetflow)
+[Ver Projeto no GitHub](https://github.com/thiagocamerato757/BudgetFlow)
