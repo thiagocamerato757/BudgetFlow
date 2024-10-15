@@ -85,7 +85,7 @@ Para rodar o BudgetFlow usando Docker, siga os passos abaixo:
 2. Baixe e execute a imagem Docker do BudgetFlow diretamente do Docker Hub usando o seguinte comando:
 
     ```bash
-    sudo docker pull thiagocamerato/budgetflow
+    docker pull thiagocamerato/budgetflow:1.0
     ```
 
     ```bash
@@ -93,9 +93,19 @@ Para rodar o BudgetFlow usando Docker, siga os passos abaixo:
     ```
 
     Esse comando:
-    - Baixa a imagem `thiagocamerato/budgetflow:1.0` do Docker Hub.
+    - Baixa a imagem `thiagocamerato/budgetflow:1.0` do Docker Hub (a mais recente).
     - Roda o container em segundo plano (`-d`).
     - Mapeia a porta 8000 do container para a porta 8000 da sua máquina, tornando o site acessível em `http://localhost:8000`.
+    - Caso a porta 8000 ja esteja endo usada, troque por:
+    ```bash
+    sudo docker run -d -p <port_to_use>:<port_to_use> thiagocamerato/budgetflow:1.0
+    ```
+    - Caso use VM tente achar o IP de sua máquina usando o comando :
+    ```bash
+    ifconfig
+    ```
+    - Depois de descobrir o IP, acesse http://<IP_VM>:8000 
+
 
 3. Acesse o site no navegador utilizando o seguinte endereço:
 
