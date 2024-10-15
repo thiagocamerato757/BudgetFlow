@@ -27,7 +27,7 @@ O site BudgetFlow oferece funcionalidades básicas para controle de finanças pe
 ### Adicionar Receitas/Despesas
 
 1. Após o login, acesse a página **Adicionar Receita** ou **Adicionar Despesa**.
-2. Preencha o formulário com os detalhes da transação (valor, descrição, data).
+2. Preencha o formulário com os detalhes da transação (valor, descrição, data, categoria).
 3. Submeta o formulário para salvar a transação no sistema.
 
 ### Visualizar, Editar e Remover Transações
