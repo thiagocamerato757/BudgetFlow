@@ -111,7 +111,10 @@ Para rodar o BudgetFlow usando Docker, siga os passos abaixo:
     ```bash
     ifconfig
     ```
-    - Depois de descobrir o IP, acesse http://<IP>:8000 
+    - Depois de descobrir o IP, acesse 
+    ```bash
+    http://<IP_VM>:8000
+    ``` 
 
 4. Para parar o container:
 
