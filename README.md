@@ -100,11 +100,6 @@ Para rodar o BudgetFlow usando Docker, siga os passos abaixo:
     ```bash
     sudo docker run -d -p <port_to_use>:<port_to_use> thiagocamerato/budgetflow:1.0
     ```
-    - Caso use VM tente achar o IP de sua máquina usando o comando :
-    ```bash
-    ifconfig
-    ```
-    - Depois de descobrir o IP, acesse http://<IP_VM>:8000 
 
 
 3. Acesse o site no navegador utilizando o seguinte endereço:
@@ -112,6 +107,11 @@ Para rodar o BudgetFlow usando Docker, siga os passos abaixo:
     ```bash
     http://localhost:8000
     ```
+    - Caso use VM tente achar o IP de sua máquina usando o comando :
+    ```bash
+    ifconfig
+    ```
+    - Depois de descobrir o IP, acesse http://<IP>:8000 
 
 4. Para parar o container:
 
