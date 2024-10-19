@@ -89,7 +89,7 @@ Para rodar o BudgetFlow usando Docker, siga os passos abaixo:
     ```
 
     ```bash
-    sudo docker run -d -p 8000:8000 -v /local/path/to/file:/app/BudgetFlow/db.sqlite3 thiagocamerato budgetflow:1.0 
+    sudo docker run -d -p 8000:8000 -v /local/path/to/file:/app/BudgetFlow/db.sqlite3 thiagocamerato/budgetflow:1.0 
     ```
 
     Esse comando:
