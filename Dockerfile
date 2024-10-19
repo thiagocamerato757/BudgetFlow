@@ -13,8 +13,12 @@ RUN pip install -r requirements.txt
 # Copia todo o conteúdo do projeto para o contêiner
 COPY . .
 
+# Copia o entrypoint.sh para o contêiner e dá permissão de execução
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 # Expõe a porta 8000 para acessar o Django
 EXPOSE 8000
 
-# Comando para rodar o servidor Django
-CMD ["python3", "BudgetFlow/manage.py", "runserver", "0.0.0.0:8000"]
+# Define o entrypoint do contêiner
+ENTRYPOINT ["/app/entrypoint.sh"]
